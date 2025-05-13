@@ -16,20 +16,30 @@
       }
 
       body {
-        background-image: url("hollow-knight2.gif");
-        background-size: calc(100% + 250px);
-        background-repeat: no-repeat;
-        background-position: -250px center;
         display: flex;
         justify-content: flex-end;
+        overflow: hidden;
+      }
+
+      .background-layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url("hollow-knight2.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 10% center; /* ajuste para focar o Hollow Knight */
+        z-index: -1;
       }
 
       .weather-container {
         width: 100%;
         max-width: 500px;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.4); /* Transparência ajustável */
-        backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(6px);
         color: white;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         padding: 30px;
@@ -119,6 +129,7 @@
     </style>
   </head>
   <body>
+    <div class="background-layer"></div>
     <div class="weather-container">
       <div class="location">Rio Grande, RS</div>
       <div class="current-temp">22°C</div>
